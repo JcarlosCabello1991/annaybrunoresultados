@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     const getUsers = async() => {
-      const response = await fetch("https://invitacionannaybruno-back.vercel.app/invitados/invitados");
+      const response = await fetch("https://annaybrunoback.vercel.app/invitados/invitados");
       const parseResponse = await response.json();
 
       if(!parseResponse.error){
