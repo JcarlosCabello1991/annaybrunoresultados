@@ -59,14 +59,6 @@ function App() {
         })
         setUsers(usersWithStyle)
         if(usersWithStyle.length > 0){
-          setTotalBusIda(()=>{
-          const total = parseResponse.message.filter(e => e.busIda === "Sí")
-          return total.length;
-          })
-          setTotalBusVuelta(()=>{
-            const total = parseResponse.message.filter(e => e.busVuelta === "Sí")
-            return total.length;
-          })
           setTotalIntolerancias(() => {
             const total = parseResponse.message.filter(e => e.intolerancias !== "No" && e.intolerancias !== "")
             let datos = []
@@ -86,11 +78,7 @@ function App() {
           setTotalAsistencia(() => {
             const total = parseResponse.message.filter(e => e.asistencia === "Sí")
             return total.length;
-          })
-          setTotalPreboda(() => {
-            const total = parseResponse.message.filter(e => e.asistenciaPreboda === "Sí")
-            return total.length;
-          })       
+          }) 
           setTotalCancionesDiferentes(() => {
             const cancionesUnicas = new Set()
 
