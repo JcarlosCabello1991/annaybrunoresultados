@@ -38,8 +38,8 @@ function App() {
   const [totalAsistencia, setTotalAsistencia] = useState(0);
   const [totalCancionesDiferentes, setTotalCancionesDiferentes] = useState(0);
 
-  const createData = (nombre, asistencia, asistenciaPreboda, cancionSugerida, intolerancias, busIda, busVuelta, mensaje) => {
-    return {nombre, asistencia, asistenciaPreboda, cancionSugerida, intolerancias, busIda, busVuelta, mensaje}
+  const createData = (nombre, asistencia, cancionSugerida, intolerancias, mensaje) => {
+    return {nombre, asistencia, cancionSugerida, intolerancias, mensaje}
   }
 
   useEffect(() => {
@@ -57,6 +57,7 @@ function App() {
             el.mensaje
           )
         })
+        console.log(usersWithStyle)
         setUsers(usersWithStyle)
         if(usersWithStyle.length > 0){
           setTotalIntolerancias(() => {
@@ -127,7 +128,7 @@ function App() {
                 {row.nombre}
               </StyledTableCell>
               <StyledTableCell align="right">{row.asistencia}</StyledTableCell>
-              <StyledTableCell align="right">{row.cancionSugerida}</StyledTableCell>
+              <StyledTableCell align="right">{row.cancionSugerida ? row.cancionSugerida : ''}</StyledTableCell>
               <StyledTableCell align="right">{row.intolerancias}</StyledTableCell>
               <StyledTableCell align="right">{row.mensaje}</StyledTableCell>
             </StyledTableRow>
