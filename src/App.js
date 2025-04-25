@@ -130,11 +130,8 @@ function App() {
           <TableRow>
             <StyledTableCell>Invitado <ArrowDropDownIcon onClick={orderGuests}/></StyledTableCell>
             <StyledTableCell align="right">Asistencia</StyledTableCell>
-            <StyledTableCell align="right">Preboda</StyledTableCell>
             <StyledTableCell align="right">Cancion</StyledTableCell>
             <StyledTableCell align="right">Alergias</StyledTableCell>
-            <StyledTableCell align="right">Bus Ida</StyledTableCell>
-            <StyledTableCell align="right">Bus Vuelta</StyledTableCell>
             <StyledTableCell align="right">Mensaje</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -145,11 +142,8 @@ function App() {
                 {row.nombre}
               </StyledTableCell>
               <StyledTableCell align="right">{row.asistencia}</StyledTableCell>
-              <StyledTableCell align="right">{row.asistenciaPreboda}</StyledTableCell>
               <StyledTableCell align="right">{row.cancionSugerida}</StyledTableCell>
               <StyledTableCell align="right">{row.intolerancias}</StyledTableCell>
-              <StyledTableCell align="right">{row.busIda}</StyledTableCell>
-              <StyledTableCell align="right">{row.busVuelta}</StyledTableCell>
               <StyledTableCell align="right">{row.mensaje}</StyledTableCell>
             </StyledTableRow>
           ))}
@@ -158,7 +152,6 @@ function App() {
     </TableContainer>
     <div style={{width: 'auto', textAlign: 'left', paddingLeft: '20px', paddingRight: '20px'}}>
       <p><strong>Asistentes:</strong> {totalAsistencia}</p>
-      <p><strong>Preboda: </strong>{totalPreboda}</p>
       <p><strong>Canciones distintas: </strong>{totalCancionesDiferentes}</p>
       <p><strong>Alergias: </strong>{totalIntolerancias.length}<br></br><strong>Tipos de alergias: </strong> 
         {!!totalIntolerancias?.int && totalIntolerancias.int.map((e, index) => {
@@ -174,8 +167,6 @@ function App() {
           return <p key={`${e.Nombre}-${index}`} style={{marginLeft: '20px'}}><strong>{e.Nombre}:</strong> {e.Intolerancias}</p>
         })
       }
-      <p><strong>Bus de Ida: </strong>{totalBusIda}</p>
-      <p><strong>Bus de Vuelta: </strong>{totalBusVuelta}</p>
     </div>    
     </div>
   );
