@@ -33,11 +33,8 @@ const StyledTableRow = styledC(TableRow)(({ theme }) => ({
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [totalBusIda, setTotalBusIda] = useState(0);
-  const [totalBusVuelta, setTotalBusVuelta] = useState(0);
   const [totalIntolerancias, setTotalIntolerancias] = useState(0);
   const [intoleranciasList, setIntoleranciasList] = useState([]);
-  const [totalPreboda, setTotalPreboda] = useState(0);
   const [totalAsistencia, setTotalAsistencia] = useState(0);
   const [totalCancionesDiferentes, setTotalCancionesDiferentes] = useState(0);
 
